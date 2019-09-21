@@ -3,7 +3,6 @@
 {% if header.content.masonry %}
 	{% do assets.addJs("https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js") %}
 	{% do assets.addJs("theme://js/masonry.js",{group:'bottom', priority: 50}) %}
-
 {% endif %}
 
 {% block content %}

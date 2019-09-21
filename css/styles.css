@@ -202,7 +202,7 @@ img.article-image {
  * Masonry
  * needs a fixed width to work properly -> set to portfolio-max-width
  */
-. masonry-grid {
+.masonry-grid {
 	width: 900px;
 }
 
