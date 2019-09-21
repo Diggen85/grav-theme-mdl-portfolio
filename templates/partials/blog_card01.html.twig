@@ -1,0 +1,23 @@
+{# example Image 275x250 #}
+{% set card_image = include('partials/card_image.html.twig',{image_width:275, image_height:250}) %}
+
+<div class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
+		<div class="mdl-card__media mdl-cell mdl-cell--12-col-tablet" style="background: #FFFFFF;">
+				<img class="article-image" src="{{card_image}}" border="0" alt="">
+		</div>
+		<div class="mdl-cell mdl-cell--8-col">
+				<h2 class="mdl-card__title-text">{{page.title}}</h2>
+				<div class="mdl-card__supporting-text padding-top">
+						<span>{{page.date|nicetime}}</span>
+            {% include 'partials/share.html.twig' %}
+				</div>
+				<div class="mdl-card__supporting-text no-left-padding">
+						<p>{#{{page.summary|striptags}}#}{{page.content}}</p>
+						<span>Category: 
+							{% for tag in page.taxonomy['category'] %}
+								{{tag}} 
+							{% endfor %}
+							</span>
+				</div>
+		</div>
+</div>

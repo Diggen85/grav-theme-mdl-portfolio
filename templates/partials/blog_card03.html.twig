@@ -1,0 +1,20 @@
+{# example Image 250x470 #}
+{% set card_image = include('partials/card_image.html.twig',{image_width:250, image_height:470}) %}
+{% set title_color = page.header.card.title_text_color ? page.header.card.title_text_color : '#d8d8d8' %}
+{% set full_image = include('partials/card_image.html.twig') %}
+
+{# Feahterlight - Global Active or Page Active and not Page disabled #}
+{% if config.plugins.featherlight.enabled and ( config.plugins.featherlight.active or page.header.featherlight.active) and not (page.header.featherlight.active is defined and not page.header.featherlight.active) %}
+	{% set lightbox = 'data-featherlight="image"' %}
+{% endif %}
+
+
+
+<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-card mdl-card mdl-shadow--4dp" style="background: url({{card_image}}) center / cover">
+    <div class="mdl-card__title mdl-card--expand "></div>
+    <div class="mdl-card__actions">
+        <a href="{{full_image}}" {{lightbox}} style="color:{{title_color}}; font-weight: 400; text-decoration:none">
+						<span class="demo-card-image__filename">{{page.title}}</span>
+				</a>
+    </div>
+</div>

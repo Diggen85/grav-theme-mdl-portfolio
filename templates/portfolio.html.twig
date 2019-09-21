@@ -1,0 +1,12 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	{% for child in page.collection() %}
+			{%include 'partials/portfolio_card.html.twig' with {'page': child} %}
+	{% endfor %}
+
+	{# Render the pagination list #}
+	{% if config.plugins.pagination.enabled and page.collection.params.pagination %}
+			{% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':page.collection.params.pagination} %}
+	{% endif %}
+{% endblock %}

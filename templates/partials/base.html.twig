@@ -1,0 +1,96 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!doctype html>
+<!--
+  MDL-Portfolio Theme for GRAV based on MDL Template Portfolio (getmdl.io)
+	Benjamin Stark <Benny_Stark@live.de>
+-->
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+    <meta name="description" content="A Grav Theme based on Material Design Lite Portfolio Template.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	{% block stylesheets %}
+		{% do assets.addCss("https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en",100) %}
+		{% do assets.addCss("https://code.getmdl.io/1.3.0/" ~ theme.mdl_theme_css,99) %}
+		{% do assets.addCss("theme://css/styles.css",98) %}
+		{% do assets.addCss("https://fonts.googleapis.com/icon?family=Material+Icons",97) %}
+		
+		{% do assets.addCss("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",90) %}
+
+		{% do assets.addCss("theme://css/custom.css",50) %}
+	{% endblock %}
+	
+	{% block javascripts %}
+		{% do assets.addJs("https://code.getmdl.io/1.3.0/material.min.js", {group:'bottom'}) %}
+		{% do assets.addJs("theme://js/footer.js",{group:'bottom'}) %}
+		{% do assets.addJs("theme://js/fab-btn.js",90) %}
+  {% endblock %}
+	
+	{% block assets deferred %}
+		{{ assets.css()|raw }}
+		{{ assets.js()|raw }}
+	{% endblock %}
+
+{% endblock head%}
+</head>
+
+<body>
+	
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+{% block header %}
+
+{# define CSS Styles #}
+{# {% set bg_url = media['theme://images/' ~ theme.head.bg_image].cropZoom(2000,263).url %} #}
+{% set bg_url = url('theme://images/' ~ theme.head.bg_image) %}
+{% set bg_color = theme.head.bg_color %}
+{% set header_style='background-color: ' ~ bg_color ~ '; background-image: url(' ~ bg_url ~ '); background-size: cover; background-position: center;' %}
+
+{% set logo =  url('theme://images/' ~ theme.head.logo) %}
+{% set logo_style = 'background-image: url(' ~ logo ~ ')' %}
+
+{% set text_style = 'color: ' ~ theme.head.text_color ~ ';' %}
+
+        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header" style="{{header_style}}"}>
+            <div class="mdl-layout__header-row portfolio-logo-row">
+				<span class="mdl-layout__title">
+						<div class="portfolio-logo" style="{{logo_style}}"></div>
+						<span class="mdl-layout__title" style="{{text_style}}">{{ config.site.title }}</span>
+				</span>
+			</div>
+            {% block header_navigation %}
+                {% include 'partials/navigation_largescreen.html.twig' %}
+            {% endblock %}
+				</header>
+				
+				{% block smalscreen_navigation %}
+					{% include 'partials/navigation_smallscreen.html.twig' %}
+				{% endblock %}
+{% endblock %}
+				
+        <main class="mdl-layout__content">
+{% block body %}
+            <div class="mdl-grid portfolio-max-width" style="justify-content:center;">
+							{% block content %}{% endblock %}
+			</div>
+{% endblock %}
+
+{% block footer %}
+		<footer class="mdl-mini-footer portfolio-footer ">
+			{% include 'partials/footer.html.twig' %}
+		</footer>
+{% endblock %}
+		</main>
+	</div>
+		
+{% block bottom %}
+    {{ assets.js('bottom')|raw }}
+{% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+       options:
+          fields:
+            header.card:
+              type: section
+              title: MDL Portfolio
+              underline: true
+              fields:
+                header.card.image:
+                  type: filepicker
+                  folder: '@self'
+                  label: Card Image from Page Media
+                  help: preferred if both Images are set
+                  toggleable: true
+                  preview_images: true
+                    - .png
+                    - .jpg
+                header.card.image_theme:
+                  type: filepicker
+                  folder: 'theme@:/images'
+                  label: Card Image from Theme Media
+                  toggleable: true
+                  preview_images: true
+                    - .png
+                    - .jpg

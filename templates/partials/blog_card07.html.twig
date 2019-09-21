@@ -1,0 +1,19 @@
+{# example Image 250x166 #}
+{% set card_image = include('partials/card_image.html.twig',{image_width:250, image_height:166}) %}
+
+<div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-card  mdl-card mdl-shadow--4dp portfolio-blog-card-compact">
+		<div class="mdl-card__media">
+				<img class="article-image" src="{{card_image}}" border="0" alt="">
+		</div>
+		<div class="mdl-card__title ">
+				<h2 class="mdl-card__title-text">{{page.title}}</h2>
+		</div>
+		<div class="mdl-card__supporting-text mdl-card--expand">
+				{{page.summary|striptags}}
+		</div>
+		<div class="mdl-card__actions mdl-card--border">
+				<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{page.url}}">
+					{{ "MDLPORTFOLIO.POST.READMORE"|t }}
+				</a>
+		</div>
+</div>

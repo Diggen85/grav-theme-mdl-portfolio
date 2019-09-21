@@ -1,0 +1,76 @@
+title: blog
+'@extends': 'default'
+
+child_type: item
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        options:
+          fields:
+            header.card:
+              unset@: true
+        advanced:
+          fields:
+            overrides:
+              fields:
+                header.child_type:
+                  default: item
+        content:
+          type: tab
+          title: Portfolio
+
+          fields:
+            content:
+              unset@: true
+            
+            header.media_order:
+              unset@: true
+            
+            header.content.items:
+              type: text
+              label: Items
+              style: vertical
+              default: '@self.children'
+
+            header.content.limit:
+              type: text
+              label: Max Displayed Items per Page
+              style: vertical
+              default: 6
+
+            header.content.order.by:
+              type: select
+              label: Order By
+              style: vertical
+              default: date
+              options:
+                folder: Folder
+                title: Title
+                date: Date
+                default: Default
+
+            header.content.order.dir:
+              type: select
+              label: Order
+              style: vertical
+              default: desc
+              options:
+                asc: Ascending
+                desc: Descending
+
+            header.content.pagination:
+              type: toggle
+              label: Pagination
+              style: vertical
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool

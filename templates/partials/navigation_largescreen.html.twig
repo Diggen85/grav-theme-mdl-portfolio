@@ -1,0 +1,8 @@
+{% set nav_style = 'style="background-color: ' ~ theme.head.nav_bg_color ~ ';"' %}
+
+<div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only" {{nav_style}}>
+		<nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+			{% include "partials/navigation_items.html.twig" %}
+		</nav>
+</div>
+

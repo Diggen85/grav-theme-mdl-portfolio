@@ -1,0 +1,18 @@
+de:
+  MDLPORTFOLIO:
+    DESCRIPTION: 
+    PAGINATION:
+      NEXT: Weiter
+      PREV: Zurück
+    POST:
+      READMORE: mehr
+      TT_SHARE: Teilen über Social Media
+en:
+  MDLPORTFOLIO:
+    DESCRIPTION: 
+    PAGINATION:
+      NEXT: Next
+      PREV: Prev
+    POST:
+      READMORE: more
+      TT_SHARE: Share via social media

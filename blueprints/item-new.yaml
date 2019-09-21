@@ -1,0 +1,73 @@
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+       options:
+          fields:
+            header.card:
+              type: section
+              title: MDL Portfolio
+              underline: true
+              fields:
+                header.card.type:
+                  type: select
+                  label: Type
+                  default: 1
+                  options:
+                    1: '12 Cell Full Post'
+                    2: ' 6 Cell Full Post'
+                    3: ' 3 Cell Picture with Title'
+                    4: ' 3 Cell Picture with Title & Text'
+                    5: ' 3 Cell Action Card'
+                    6: ' 5 Cell Post Summary with Title in Image'
+                    7: ' 4 Cell Post Summary with Title under Image'
+                header.card.image:
+                  type: filepicker
+                  folder: '@self'
+                  label: Card Image from Page Media
+                  help: preferred if both Images are set
+                  toggleable: true
+                  preview_images: true
+                    - .png
+                    - .jpg
+                header.card.image_theme:
+                  type: filepicker
+                  folder: 'theme@:/images'
+                  label: Card Image from Theme Media
+                  toggleable: true
+                  preview_images: true
+                    - .png
+                    - .jpg
+                header.card.title_text_color:
+                  type: colorpicker
+                  label: Title Text Color
+                  toggleable: true
+                  default: #d8d8d8
+                header.card.action_text:
+                  type: text
+                  label: Action Text
+                  toggleable: true
+                  default: ''
+                header.card.action_icon:
+                  type: text
+                  label: Action Icon
+                  toggleable: true
+                  default: ''
+                header.card.action_url:
+                  type: text
+                  label: Action URL
+                  toggleable: true
+                  default: ''
+                  default: ''
+                header.card.share_url:
+                  type: text
+                  label: Share URL
+                  toggleable: true
+                  default: ''

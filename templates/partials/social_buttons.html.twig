@@ -1,0 +1,10 @@
+{# Get Social Button Items #}
+{% if page.header.card.social_buttons is defined %}
+    {% for btn in page.header.card.social_buttons %}
+{# Output Button #}
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary portfolio-social-button" href="{{btn.url}}" target="_blank">
+             {{btn.icon}}
+        </a>
+    {% endfor %}
+{% endif %}
+{#  mdl-js-ripple-effect mdl-button--raised  mdl-button--colored #}

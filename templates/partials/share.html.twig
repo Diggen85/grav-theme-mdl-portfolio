@@ -1,0 +1,8 @@
+{% if page.header.card.share_url %}
+		<a class="mdl-card__supporting-text no-bottom-padding" href="{{page.header.card.share_url}}">
+				<div id="tt1" class="icon material-icons portfolio-share-btn">share</div>
+		</a>
+		<div class="mdl-tooltip" for="tt1">
+				{{"MDLPORTFOLIO.POST.TT_SHARE"|t}}
+		</div>
+{% endif %}

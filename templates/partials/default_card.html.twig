@@ -1,0 +1,17 @@
+{# example Image 890x250 #}
+{% set card_image = include('partials/card_image.html.twig',{image_width:890, image_height:250}) %}
+
+<div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+		<div class="mdl-card__title">
+				<h2 class="mdl-card__title-text">{{ page.title }}</h2>
+		</div>
+		<div class="mdl-card__media">
+				<img class="article-image" src="{{ card_image }}" border="0" alt="">
+		</div>
+
+		<div class="mdl-grid portfolio-copy">
+
+			{{ page.content }}
+
+		</div>
+</div>

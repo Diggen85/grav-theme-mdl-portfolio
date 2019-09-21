@@ -1,0 +1,38 @@
+{# Page - own Image #}
+{% if page.header.card.image and page.media.images[page.header.card.image] %}
+	{% set card_image = page.media.images[page.header.card.image] %}
+
+{# Page - Theme Image #}
+{% elseif page.header.card.image_theme and media['theme://images/' ~ page.header.card.image_theme ] %}
+	{% set card_image = media['theme://images/' ~ page.header.card.image_theme] %} 	
+
+{# Theme - Default Image #}
+{% else %}
+	
+	{# Normal - Default - Page #}
+	{% if page.template == "default" %}
+		{% set card_image = media['theme://images/' ~ theme.default.image] %} 	
+	
+	{# For Item Page - check if from Portfolio or Blog Template #}
+	{% elseif page.template == "item" %}
+		{% if page.parent.template == "portfolio" %}
+			{% set card_image = media['theme://images/' ~ theme.portfolio.image]%}		
+		
+		{# For Template Blog - check the Type #}
+		{% elseif page.parent.template == "blog" %}
+			{% set type = page.header.card.type ? page.header.card.type : 1  %}
+			{% set image = attribute(theme.blog,'image0' ~ type) %}
+			{% set card_image = media['theme://images/' ~ image] %}
+		{% endif %}
+	{% endif %}
+{% endif %}
+
+{# URL to full Image #}
+{% if image_width is defined and image_height is defined and card_image is defined %}
+	{% set card_image_url = card_image.cropZoom(image_width,image_height).url %}
+{% else %}
+  {% set card_image_url = card_image.url %}
+{% endif %}
+
+{# Output #}
+{{card_image_url}}

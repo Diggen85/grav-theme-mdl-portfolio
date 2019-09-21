@@ -1,0 +1,39 @@
+{% set pagination = pagination|default(page.collection.params.pagination) %}
+{% set base_url = base_url|default(page.url) %}
+
+{% if pagination|length > 1 %}
+<div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet pagination-cell" style="text-align:center">
+
+    {% if pagination.hasPrev %}
+        {% set url =  (base_url ~ pagination.params ~ pagination.prevUrl)|replace({'//':'/'}) %}
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--primary" 
+				href="{{url}}">{{"MDLPORTFOLIO.PAGINATION.PREV"|t}}</a>
+    {% else %}
+      {#empty#}
+    {% endif %}
+
+    {% for paginate in pagination %}
+
+        {% if paginate.isCurrent %}
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" 
+				href="">{{paginate.number}}</a>
+        {% elseif paginate.isInDelta %}
+            {% set url = (base_url ~ pagination.params ~ paginate.url)|replace({'//':'/'}) %}
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--primary" 
+				href="{{url}}">{{paginate.number}}</a>
+        {% elseif paginate.isDeltaBorder %}
+            {#empty#}
+        {% endif %}
+
+    {% endfor %}
+    {% if pagination.hasNext %}
+        {% set url = (base_url ~ pagination.params ~ pagination.nextUrl)|replace({'//':'/'}) %}
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--primary" 
+				href="{{url}}">{{"MDLPORTFOLIO.PAGINATION.NEXT"|t}}</a>
+    {% else %}
+      {#empty#}
+    {% endif %}
+
+
+</div>
+{% endif %}

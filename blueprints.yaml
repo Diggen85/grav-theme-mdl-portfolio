@@ -1,0 +1,198 @@
+name: MDL Portfolio
+version: 0.2.0
+description: Theme based on MDL Portfolio Template
+icon: rebel
+author:
+  name: Benny Stark
+  email: Benny_Stark@live.de
+homepage: https://www.benjamin-stark.de
+demo: 
+keywords: grav, theme, MDL, portfolio, blog, google, material desgin lite,
+bugs: https://github.com/diggen85/grav-theme-mdl-portfolio/
+readme: https://github.com/diggen85/grav-theme-mdl-portfolio/blob/develop/README.md
+license: MIT (Theme provided Images - Copyright Google, 2015. Licensed under Apache-2 license)
+
+dependencies:
+  - { name: shortcode-core}
+  - { name: grav, version: '>=1.6.0' }
+
+
+form:
+  validation: loose
+  fields:
+    user_images:
+      type: file
+      label: Theme User Images
+      destination: 'theme@:/images'
+      style: vertical
+      random_name: false
+      avoid_overwriting: true
+      multiple: true
+      accept:
+        - .png
+        - .jpg
+    mdl_theme_css:
+      type: text
+      label: 'MDL Theme CSS - <a href="https://getmdl.io/customize/index.html" target="_blank">getMDL Custom CSS theme builder</a>'
+      style: vertical
+      default: material.grey-pink.min.css
+    head:
+      type: fieldset
+      title: 'Head / Navigation Options'
+      info: 'Info text'
+      collapsible: true
+      collapsed: true
+      fields:
+          head.logo:
+            type: filepicker
+            folder: 'theme@:/images'
+            label: Page Logo
+            preview_images: true
+            accept:
+              - .png
+              - .jpg
+          head.bg_image:
+            type: filepicker
+            folder: 'theme@:/images'
+            label: Background Image
+            preview_images: true
+            accept:
+              - .png
+              - .jpg
+          head.bg_color:
+            type: colorpicker
+            label:  Background Color
+            default: 'rgba(197, 197, 197, 0.44)'
+          head.text_color:
+            type: colorpicker
+            label: Text Color
+            default: 'rgb(66, 66, 66)'
+          head.nav_bg_color:
+            type: colorpicker
+            label: Navigation Background Color
+            default: 'rgb(0,0,0,0.08)'
+          head.nav_text_color:
+            type: colorpicker
+            label: Navigation Text Color
+            default: 'rgb(66, 66, 66)'
+    default:
+      type: fieldset
+      title: 'Default Page Options'
+      info: 'Info text'
+      collapsible: true
+      collapsed: true
+      fields:
+        default.image:
+          type: filepicker
+          folder: 'theme@:/images'
+          label: Default Page Card Default Image
+          preview_images: true
+            - .png
+            - .jpg
+    portfolio:
+      type: fieldset
+      title: 'Portfolio Options'
+      info: 'Info text'
+      collapsible: true
+      collapsed: true
+      fields:
+        portfolio.image:
+          type: filepicker
+          folder: 'theme@:/images'
+          label: Portfolio Card Default Image
+          preview_images: true
+            - .png
+            - .jpg
+    blog:
+      type: fieldset
+      title: 'Blog Options'
+      info: 'Info text'
+      collapsible: true
+      collapsed: true
+      fields:
+        blog.image01:
+          type: filepicker
+          folder: 'theme@:/images'
+          label: Blog (Type 01) Card Default Image
+          preview_images: true
+            - .png
+            - .jpg
+        blog.image02:
+          type: filepicker
+          folder: 'theme@:/images'
+          label: Blog (Type 02) Card Default Image
+          preview_images: true
+            - .png
+            - .jpg
+        blog.image03:
+          type: filepicker
+          folder: 'theme@:/images'
+          label: Blog (Type 03) Card Default Image
+          preview_images: true
+            - .png
+            - .jpg
+        blog.image04:
+          type: filepicker
+          folder: 'theme@:/images'
+          label: Blog (Type 04) Card Default Image
+          preview_images: true
+            - .png
+            - .jpg
+        blog.image05:
+          type: filepicker
+          folder: 'theme@:/images'
+          label: Blog (Type 05) Card Default Image
+          preview_images: true
+            - .png
+            - .jpg
+        blog.image06:
+          type: filepicker
+          folder: 'theme@:/images'
+          label: Blog (Type 06) Card Default Image
+          preview_images: true
+            - .png
+            - .jpg
+        blog.image07:
+          type: filepicker
+          folder: 'theme@:/images'
+          label: Blog (Type 07) Card Default Image
+          preview_images: true
+            - .png
+            - .jpg
+    foot:
+      type: fieldset
+      title: 'Footer Options'
+      info: 'Info text'
+      collapsible: true
+      collapsed: true
+      fields:
+        foot.text:
+          type: text
+          classes: fancy
+          label: Text
+          show_all: true
+        foot.page1:
+          type: pages
+          label: Page 1
+          show_all: true
+          show_modular: false
+          show_root: false
+        foot.page2:
+          type: pages
+          classes: fancy
+          label: Page 2
+          show_all: true
+        foot.bg_image:
+          type: filepicker
+          folder: 'theme@:/images'
+          label: Background Image
+          preview_images: true
+            - .png
+            - .jpg
+        foot.text_color:
+            type: colorpicker
+            label: Text Color
+            default: #D8D8D8
+      
+      
+      

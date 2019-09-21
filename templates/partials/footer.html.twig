@@ -1,0 +1,13 @@
+
+		<div class="mdl-mini-footer__left-section">
+				<div class="mdl-logo">{{theme.foot.text}}</div>
+		</div>
+
+		{% set page1 = pages.find(theme.foot.page1) %}
+		{% set page2 = pages.find(theme.foot.page2) %}
+		<div class="mdl-mini-footer__right-section">
+				<ul class="mdl-mini-footer__link-list">
+						<li><a href="{{page1.url}}">{{page1.title}}</a></li>
+						<li><a href="{{page2.url}}">{{page2.title}}</a></li>
+				</ul>
+		</div>

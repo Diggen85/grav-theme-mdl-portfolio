@@ -1,0 +1,8 @@
+{% set nav_text_style = 'color: ' ~ theme.head.nav_text_color ~ ';' %}
+
+{% for p in pages.children.visible %}
+	{% set current_page = (p.active or p.activeChild) ? 'is-active' : '' %}
+				<a class="mdl-navigation__link {{current_page}}" href="{{p.url}}" style="{{nav_text_style}}">{{p.menu}}</a>
+{% endfor %}
+
+

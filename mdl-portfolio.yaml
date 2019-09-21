@@ -1,0 +1,28 @@
+enabled: true
+user_images:
+mdl_theme_css: material.grey-pink.min.css
+head:
+  logo: logo.png
+  bg_image: header-bg.jpg
+  bg_color: 'rgba(197, 197, 197, 0.44)'
+  text_color: 'rgb(66, 66, 66);'
+  nav_bg_color: 'rgb(0,0,0,0.08)'
+  nav_text_color: 'rgb(66, 66, 66);'
+default:
+  image: about-header.jpg
+portfolio:
+  image: example-work01.jpg
+blog:
+  image01: example-blog01.jpg
+  image02: example-blog02.jpg
+  image03: example-blog03.jpg
+  image04: example-blog04.jpg
+  image05: example-blog05.jpg
+  image06: example-blog06.jpg
+  image07: example-blog07.jpg
+foot:
+  text: "A Grav Theme based on Material Design Lite Portfolio Template."
+  page1: '/home'
+  page2: '/about/
+  bg_image: footer-background.png
+  text_color: '#9E9E9E'

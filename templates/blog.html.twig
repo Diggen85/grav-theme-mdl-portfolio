@@ -1,0 +1,32 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+{% set childrens = page.collection() %}
+{% for child in childrens %} 
+		{% if child.header.card.type == 1 %}
+			{%include 'partials/blog_card01.html.twig' with {'page':child }%}
+		{% elseif child.header.card.type == 2 %}
+			{%include 'partials/blog_card02.html.twig' with {'page':child }%}
+		{% elseif child.header.card.type == 3 %}
+			{%include 'partials/blog_card03.html.twig' with {'page':child }%}
+		{% elseif child.header.card.type == 4 %}
+			{%include 'partials/blog_card04.html.twig' with {'page':child }%}
+		{% elseif child.header.card.type == 5 %}
+			{%include 'partials/blog_card05.html.twig' with {'page':child }%}
+		{% elseif child.header.card.type == 6 %}
+			{%include 'partials/blog_card06.html.twig' with {'page':child }%}
+		{% elseif child.header.card.type == 7 %}
+			{%include 'partials/blog_card07.html.twig' with {'page':child }%}
+		{% else %}
+			{%include 'partials/blog_card01.html.twig' with {'page':child }%}
+		{% endif %}
+{% endfor %}
+
+{# Render the pagination list #}
+{% if config.plugins.pagination.enabled and page.collection.params.pagination %}
+    {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':childrens.params.pagination} %}
+{% endif %}
+
+
+{% endblock %}
