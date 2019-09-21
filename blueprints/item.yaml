@@ -21,13 +21,23 @@ form:
                   label: Type
                   default: 1
                   options:
-                    1: '12 Cell Post'
-                    2: '6 Cell Post'
-                    3: 'Picture'
-                    4: 'Picture with Title & Text'
-                    5: 'Action Card'
-                    6: '5 Cell Post Summary with Title in Image'
-                    7: '4 Cell Post Summary with Title under Image'
+                    1: '12 Cell Full Post, Picture left'
+                    2: ' 6 Cell Full Post, Title above Image'
+                    3: ' 3 Cell Picture with Title'
+                    4: ' 3 Cell Picture with Title & Description'
+                    5: ' 3 Cell Action Card'
+                    6: ' 5 Cell Post Summary with Title in Image'
+                    7: ' 4 Cell Post Summary with Title under Image'
+                    8: ' 6 Cell Post Summary with Title above Image'
+                header.card.cells:
+                  type: number
+                  label: Card Cells
+                  toggleable: true
+                  default: 6
+                  validate:
+                    type: number
+                    min: 2
+                    max: 12
                 header.card.image:
                   type: filepicker
                   folder: '@self'

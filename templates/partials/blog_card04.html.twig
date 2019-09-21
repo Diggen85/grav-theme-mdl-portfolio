@@ -3,12 +3,14 @@
 {% set title_color = page.header.card.title_text_color ? page.header.card.title_text_color : '#d8d8d8' %}
 {% set full_image = include('partials/card_image.html.twig') %}
 
+{% set cells = page.header.card.cells ?? 3 %}
+
 {# Feahterlight - Global Active or Page Active and not Page disabled #}
 {% if config.plugins.featherlight.enabled and ( config.plugins.featherlight.active or page.header.featherlight.active) and not (page.header.featherlight.active is defined and not page.header.featherlight.active) %}
 	{% set lightbox = 'data-featherlight="image"' %}
 {% endif %}
 
-<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp ">
+<div class="mdl-cell mdl-cell--{{cells}}-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
     <div class="mdl-card__media">
         <a href="{{full_image}}" {{lightbox}}> <img class="article-image" src="{{card_image}}" border="0" alt=""></a>
     </div>

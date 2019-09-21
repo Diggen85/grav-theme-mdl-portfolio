@@ -1,7 +1,9 @@
 {# example Image 434x226 #}
 {% set card_image = include('partials/card_image.html.twig',{image_width:434, image_height:226}) %}
 
-<div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
+{% set cells = page.header.card.cells ?? 6 %}
+
+<div class="mdl-cell mdl-cell--{{cells}}-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
     <div class="mdl-card__title">
         <h2 class="mdl-card__title-text">{{page.title}}</h2>
     </div>

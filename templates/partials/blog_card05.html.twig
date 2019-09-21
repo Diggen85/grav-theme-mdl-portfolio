@@ -2,8 +2,9 @@
 {% set card_image = include('partials/card_image.html.twig',{image_width:200, image_height:200}) %}
 {% set title_color = page.header.card.title_text_color ? page.header.card.title_text_color : '#d8d8d8' %}
 
+{% set cells = page.header.card.cells ?? 6 %}
 
-<div class="demo-card-event mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-card mdl-card mdl-shadow--4dp mdl-color-text--white" style="background: url({{card_image}}) center / cover">
+<div class="demo-card-event mdl-cell mdl-cell--cells}}-col mdl-cell--4-col-tablet mdl-card mdl-card mdl-shadow--4dp mdl-color-text--white" style="background: url({{card_image}}) center / cover">
 		<div class="mdl-card__title mdl-card--expand">
 				<h4 style="color: {{title_color}};">
 					{{page.title}}

@@ -192,7 +192,7 @@ form:
         foot.text_color:
             type: colorpicker
             label: Text Color
-            default: #D8D8D8
+            default: #9E9E9E
       
       
       

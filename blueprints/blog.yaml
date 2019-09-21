@@ -41,7 +41,7 @@ form:
               type: text
               label: Max Displayed Items per Page
               style: vertical
-              default: 6
+              default: 24
 
             header.content.order.by:
               type: select
@@ -69,6 +69,18 @@ form:
               style: vertical
               highlight: 1
               default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            
+            header.content.masonry:
+              type: toggle
+              label: Masonry
+              style: vertical
+              highlight: 0
+              default: 0
               options:
                 1: PLUGIN_ADMIN.ENABLED
                 0: PLUGIN_ADMIN.DISABLED

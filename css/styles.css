@@ -154,6 +154,10 @@ img.article-image {
 /*
  * Own Classes
  */
+ .portfolio-avatar-card {
+	height: fit-content;
+ }
+ 
 .portfolio-avatar-card .mdl-card__title {
   background-repeat: no-repeat;
   background-position: 50%;
@@ -194,7 +198,13 @@ img.article-image {
   font-size:36px;
 }
 
-
+/*
+ * Masonry
+ * needs a fixed width to work properly -> set to portfolio-max-width
+ */
+. masonry-grid {
+	width: 900px;
+}
 
 /*
  * mdl-btn--fab-flinger 

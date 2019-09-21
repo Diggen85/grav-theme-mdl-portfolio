@@ -1,7 +1,10 @@
 {# example Image 275x250 #}
 {% set card_image = include('partials/card_image.html.twig',{image_width:275, image_height:250}) %}
 
-<div class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
+{% set cells = page.header.card.cells ?? 12 %}
+
+
+<div class="mdl-grid mdl-cell mdl-cell--{{cells}}-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
 		<div class="mdl-card__media mdl-cell mdl-cell--12-col-tablet" style="background: #FFFFFF;">
 				<img class="article-image" src="{{card_image}}" border="0" alt="">
 		</div>
