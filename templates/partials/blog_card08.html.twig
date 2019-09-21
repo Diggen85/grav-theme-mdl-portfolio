@@ -1,0 +1,25 @@
+{# Custom Card Type 2 with summary #}
+{% set card_image = include('partials/card_image.html.twig',{image_width:434, image_height:226}) %}
+
+{% set cells = page.header.card.cells ?? 6 %}
+
+<div class="mdl-cell mdl-cell--{{cells}}-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">{{page.title}}</h2>
+    </div>
+    <div class="mdl-card__media">
+				<img class="article-image" src="{{card_image}}" border="0" alt="">
+    </div>
+    <div class="mdl-card__supporting-text no-bottom-padding">
+        <span>{{page.date|nicetime}}</span>
+        {% include 'partials/share.html.twig' %}
+    </div>
+    <div class="mdl-card__supporting-text">
+      {{page.summary|striptags}}
+    </div>
+		<div class="mdl-card__actions mdl-card--border">
+				<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{page.url}}">
+					{{ "MDLPORTFOLIO.POST.READMORE"|t }}
+				</a>
+		</div>
+</div>

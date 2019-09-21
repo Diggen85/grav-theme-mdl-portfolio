@@ -1,0 +1,68 @@
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+       options:
+          fields:
+            header.card:
+              type: section
+              title: MDL Portfolio
+              underline: true
+              fields:
+                header.card.avatar_image:
+                  type: filepicker
+                  folder: '@self'
+                  label: Avatar Image
+                  help: like 280x360px
+                  toggleable: true
+                  preview_images: true
+                    - .png
+                    - .jpg
+                header.card.avatar_background_color:
+                  type: filepicker
+                  type: colorpicker
+                  label: Avatar Background Color
+                  toggleable: true
+                  default: #d8d8d8
+                header.card.image:
+                  type: filepicker
+                  folder: '@self'
+                  label: Card Image from Page Media
+                  help: preferred if both Images are set
+                  toggleable: true
+                  preview_images: true
+                    - .png
+                    - .jpg
+                header.card.image_theme:
+                  type: filepicker
+                  folder: 'theme@:/images'
+                  label: Card Image from Theme Media
+                  toggleable: true
+                  preview_images: true
+                    - .png
+                    - .jpg
+                header.card.title_text_color:
+                  type: colorpicker
+                  label: Title Text Color
+                  toggleable: true
+                  default: #d8d8d8
+                header.card.social_buttons:
+                    type: list
+                    style: vertical
+                    label: Social Buttons
+                    toggleable: true
+                    fields:
+                      .icon:
+                        type: text
+                        label: Icon
+                        help: as <i> Tag
+                      .url:
+                        type: text
+                        label: URL
