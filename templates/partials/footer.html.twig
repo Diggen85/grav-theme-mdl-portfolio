@@ -1,6 +1,8 @@
-
+{% set style="color:"~theme.foot.text_color %}
+{{dump(theme)}}
 		<div class="mdl-mini-footer__left-section">
-				<div class="mdl-logo">{{theme.foot.text}}</div>
+                <div class="mdl-logo" style="{{style}}" >{{theme.foot.text}}</div>
+                <div class="mdl-logo"> {{ include('partials/social_buttons.html.twig',{style:style}) }}</div>
 		</div>
 
 		{% set page1 = pages.find(theme.foot.page1) %}

@@ -54,15 +54,12 @@ form:
                   toggleable: true
                   default: #d8d8d8
                 header.card.social_buttons:
-                    type: list
-                    style: vertical
-                    label: Social Buttons
-                    toggleable: true
-                    fields:
-                      .icon:
-                        type: text
-                        label: Icon
-                        help: as <i> Tag
-                      .url:
-                        type: text
-                        label: URL
+                  type: toggle
+                  label: Show Social Buttons
+                  highlight: 1
+                  default: 1
+                  options:
+                      1: Enabled
+                      0: Disabled
+                  validate:
+                      type: bool

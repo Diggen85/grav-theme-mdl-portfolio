@@ -193,6 +193,25 @@ form:
             type: colorpicker
             label: Text Color
             default: #9E9E9E
-      
+    social:
+      type: fieldset
+      title: 'Social Buttons'
+      info: 'Info text'
+      collapsible: true
+      collapsed: true
+      fields:
+        social.buttons:
+          type: list
+          style: vertical
+          label: Social Buttons
+          toggleable: false
+          fields:
+            .icon:
+              type: text
+              label: Icon
+              help: FontAwesome or Material Design Icons as <i> Tag
+            .url:
+              type: text
+              label: URL
       
       

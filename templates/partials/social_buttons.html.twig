@@ -1,8 +1,15 @@
+{# Check for Parameter class and style, else set default#}
+{% if not class is defined and not style is defined %}
+    {% set class="mdl-button--primary" %}
+    {% set style = "" %}
+{% endif %}
+
+
 {# Get Social Button Items #}
-{% if page.header.card.social_buttons is defined %}
-    {% for btn in page.header.card.social_buttons %}
+{% if theme.social.buttons is defined %}
+    {% for btn in theme.social.buttons %}
 {# Output Button #}
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary portfolio-social-button" href="{{btn.url}}" target="_blank">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect portfolio-social-button {{class}}" style="{{style}}" href="{{btn.url}}" target="_blank">
              {{btn.icon}}
         </a>
     {% endfor %}

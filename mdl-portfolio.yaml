@@ -23,6 +23,8 @@ blog:
 foot:
   text: "A Grav Theme based on Material Design Lite Portfolio Template."
   page1: '/home'
-  page2: '/about/
+  page2: '/about/'
   bg_image: footer-background.png
   text_color: '#D8D8D8'
+ 
+  

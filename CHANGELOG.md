@@ -3,12 +3,16 @@
 
 1. [](#new)
     * Masonry Blog
-		* Added Item / Card Type option to change the cells count (width)
-		* Added Item / Card Tpye - 6 Cell Post Summary with Title above Image
+    * Added Item / Card Type option to change the cells count (width)
+    * Added Item / Card Tpye - 6 Cell Post Summary with Title above Image
 2. [](#improved)
-		* Changed naming of Blog Layouts
+    * Changed naming of Blog Layouts
+    * Moved Social Buttons to Theme Config
+        
 3. [](#bugfix)
-		* removed extra ' in shortcode
+    * removed extra ' in shortcode
+    * fixed missing ' in mdl-portfolio.yaml
+    * Social Button ripple effect is now square
 
 # v0.1.0
 ##  05/12/2019
